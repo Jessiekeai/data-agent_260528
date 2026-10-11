@@ -1,7 +1,6 @@
 import uuid
 from typing import List, Dict
 
-from aiohttp import payload
 from langchain_huggingface import HuggingFaceEndpointEmbeddings
 
 from app.conf.meta_config import MetaConfig, TableConfig, MetricConfig

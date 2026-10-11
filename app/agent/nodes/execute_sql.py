@@ -13,7 +13,7 @@ async def execute_sql(state: DataAgentState, runtime: Runtime[DataAgentContext])
         dw_mysql_repo = runtime.context["dw_mysql_repo"]
 
         list = await dw_mysql_repo.execute_sql(sql)
-        runtime.stream_writer(list)
+        runtime.stream_writer({"result": list})
 
         logger.info(f"执行SQL成功:{list}")
         return {}

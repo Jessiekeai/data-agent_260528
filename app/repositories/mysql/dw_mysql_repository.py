@@ -34,4 +34,4 @@ class DWMysqlRepository():
     async def execute_sql(self, sql: str) -> list:
         result = await self.session.execute(text(sql))
 
-        return result.mappings().all()
+        return [dict(item)for item in result.mappings().all()]
